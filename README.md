@@ -98,8 +98,8 @@ BUNNY_EMBED_BASE_URL=https://iframe.mediadelivery.net/embed
 Because Bunny CDN sends webhooks over the public internet, you need an HTTPS tunnel to reach your local backend:
 
 ```bash
-# Start ngrok on backend port 4000
-ngrok http 4000
+# Start cloudflared on backend port 4000
+npx cloudflared tunnel --url http://localhost:4000
 ```
 
 Copy the generated HTTPS forwarding URL (e.g. `https://a1b2c3.ngrok-free.app`) and configure:
